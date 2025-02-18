@@ -23,6 +23,8 @@
 		F6CA2B9A2D6329C600F04242 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2B992D6329C600F04242 /* UIViewController+Extension.swift */; };
 		F6CA2B9C2D63303400F04242 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2B9B2D63303400F04242 /* Pokemon.swift */; };
 		F6CA2BC42D64065300F04242 /* PokemonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2BC32D64065300F04242 /* PokemonType.swift */; };
+		F6CA2BEC2D64153800F04242 /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2BEB2D64153800F04242 /* ThemeFont.swift */; };
+		F6CA2BEE2D6415B900F04242 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2BED2D6415B900F04242 /* ThemeColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		F6CA2B992D6329C600F04242 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		F6CA2B9B2D63303400F04242 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		F6CA2BC32D64065300F04242 /* PokemonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonType.swift; sourceTree = "<group>"; };
+		F6CA2BEB2D64153800F04242 /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
+		F6CA2BED2D6415B900F04242 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 		F6CA2B6A2D63264600F04242 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				F6CA2BEB2D64153800F04242 /* ThemeFont.swift */,
+				F6CA2BED2D6415B900F04242 /* ThemeColor.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -235,11 +241,13 @@
 				F6CA2B9C2D63303400F04242 /* Pokemon.swift in Sources */,
 				F6CA2B9A2D6329C600F04242 /* UIViewController+Extension.swift in Sources */,
 				F6CA2B7B2D63264600F04242 /* AppDelegate.swift in Sources */,
+				F6CA2BEC2D64153800F04242 /* ThemeFont.swift in Sources */,
 				F6CA2B7C2D63264600F04242 /* PokeMon_UIKit.xcdatamodeld in Sources */,
 				F6CA2B7D2D63264600F04242 /* SceneDelegate.swift in Sources */,
 				F6CA2B982D6329BA00F04242 /* UIView+Extension.swift in Sources */,
 				F6CA2B862D63291300F04242 /* UIColor+Extension.swift in Sources */,
 				F6CA2BC42D64065300F04242 /* PokemonType.swift in Sources */,
+				F6CA2BEE2D6415B900F04242 /* ThemeColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
