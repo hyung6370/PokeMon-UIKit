@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum StateType: String {
+enum StatType: String {
     case hp, attack, defense, speed
 }
 
@@ -34,7 +34,29 @@ struct Pokemon: Codable, Hashable {
     private let types: [TypeElement]
     let weight: Int
     
+    var pokemonTypes: [PokemonType] {
+        return types.map { PokemonType(rawValue: $0.type.name) ?? .normal }
+    }
     
+    var imageUrl: String {
+        return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png"
+    }
+    
+    var tag: String {
+        return String(format: "%04d", id)
+    }
+    
+    func statValue(for statType: StatType) -> Int {
+        return stats.first(where: { $0.stat.name == statType.rawValue })?.baseStat ?? 0
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+    
+    static func == (lhs: Pokemon, rhs: Pokemon) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
 }
 
 struct StatClass: Codable {
