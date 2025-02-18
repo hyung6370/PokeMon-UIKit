@@ -25,6 +25,9 @@
 		F6CA2BC42D64065300F04242 /* PokemonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2BC32D64065300F04242 /* PokemonType.swift */; };
 		F6CA2BEC2D64153800F04242 /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2BEB2D64153800F04242 /* ThemeFont.swift */; };
 		F6CA2BEE2D6415B900F04242 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2BED2D6415B900F04242 /* ThemeColor.swift */; };
+		F6CA2BF12D641C7100F04242 /* TypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2BF02D641C7100F04242 /* TypeLabel.swift */; };
+		F6CA2BF32D64239300F04242 /* ImageContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2BF22D64239300F04242 /* ImageContainerView.swift */; };
+		F6CA2BF52D644C7C00F04242 /* PokemonInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2BF42D644C7C00F04242 /* PokemonInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		F6CA2BC32D64065300F04242 /* PokemonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonType.swift; sourceTree = "<group>"; };
 		F6CA2BEB2D64153800F04242 /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
 		F6CA2BED2D6415B900F04242 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		F6CA2BF02D641C7100F04242 /* TypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeLabel.swift; sourceTree = "<group>"; };
+		F6CA2BF22D64239300F04242 /* ImageContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContainerView.swift; sourceTree = "<group>"; };
+		F6CA2BF42D644C7C00F04242 /* PokemonInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 		F6CA2B812D63266700F04242 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F6CA2BEF2D641C6300F04242 /* Custom */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,6 +158,16 @@
 			children = (
 			);
 			path = Transition;
+			sourceTree = "<group>";
+		};
+		F6CA2BEF2D641C6300F04242 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				F6CA2BF02D641C7100F04242 /* TypeLabel.swift */,
+				F6CA2BF22D64239300F04242 /* ImageContainerView.swift */,
+				F6CA2BF42D644C7C00F04242 /* PokemonInfoView.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,11 +255,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CA2BF32D64239300F04242 /* ImageContainerView.swift in Sources */,
 				F6CA2B9C2D63303400F04242 /* Pokemon.swift in Sources */,
+				F6CA2BF12D641C7100F04242 /* TypeLabel.swift in Sources */,
 				F6CA2B9A2D6329C600F04242 /* UIViewController+Extension.swift in Sources */,
 				F6CA2B7B2D63264600F04242 /* AppDelegate.swift in Sources */,
 				F6CA2BEC2D64153800F04242 /* ThemeFont.swift in Sources */,
 				F6CA2B7C2D63264600F04242 /* PokeMon_UIKit.xcdatamodeld in Sources */,
+				F6CA2BF52D644C7C00F04242 /* PokemonInfoView.swift in Sources */,
 				F6CA2B7D2D63264600F04242 /* SceneDelegate.swift in Sources */,
 				F6CA2B982D6329BA00F04242 /* UIView+Extension.swift in Sources */,
 				F6CA2B862D63291300F04242 /* UIColor+Extension.swift in Sources */,
