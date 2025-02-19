@@ -13,12 +13,6 @@
 		F6CA2B7C2D63264600F04242 /* PokeMon_UIKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2B722D63264600F04242 /* PokeMon_UIKit.xcdatamodeld */; };
 		F6CA2B7D2D63264600F04242 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2B732D63264600F04242 /* SceneDelegate.swift */; };
 		F6CA2B862D63291300F04242 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2B852D63291300F04242 /* UIColor+Extension.swift */; };
-		F6CA2B892D63294400F04242 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F6CA2B882D63294400F04242 /* CombineCocoa */; };
-		F6CA2B8C2D63295300F04242 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F6CA2B8B2D63295300F04242 /* SDWebImage */; };
-		F6CA2B8E2D63295300F04242 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F6CA2B8D2D63295300F04242 /* SDWebImageMapKit */; };
-		F6CA2B912D63296500F04242 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F6CA2B902D63296500F04242 /* SnapKit */; };
-		F6CA2B932D63296500F04242 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F6CA2B922D63296500F04242 /* SnapKit-Dynamic */; };
-		F6CA2B962D63297200F04242 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = F6CA2B952D63297200F04242 /* Then */; };
 		F6CA2B982D6329BA00F04242 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2B972D6329BA00F04242 /* UIView+Extension.swift */; };
 		F6CA2B9A2D6329C600F04242 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2B992D6329C600F04242 /* UIViewController+Extension.swift */; };
 		F6CA2B9C2D63303400F04242 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2B9B2D63303400F04242 /* Pokemon.swift */; };
@@ -37,6 +31,9 @@
 		F6CA2C032D6595D300F04242 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2C022D6595D300F04242 /* DetailViewModel.swift */; };
 		F6CA2C052D659A6500F04242 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2C042D659A6500F04242 /* DetailViewController.swift */; };
 		F6CA2C072D659ACB00F04242 /* PokemonStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2C062D659ACB00F04242 /* PokemonStatView.swift */; };
+		F6CA2C092D659B9C00F04242 /* StatGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2C082D659B9C00F04242 /* StatGraph.swift */; };
+		F6CA2C1E2D65B68000F04242 /* PokemonAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2C1D2D65B68000F04242 /* PokemonAnimationTransition.swift */; };
+		F6CA2C202D65BCC100F04242 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2C1F2D65BCC100F04242 /* CardPresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +63,9 @@
 		F6CA2C022D6595D300F04242 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		F6CA2C042D659A6500F04242 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F6CA2C062D659ACB00F04242 /* PokemonStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonStatView.swift; sourceTree = "<group>"; };
+		F6CA2C082D659B9C00F04242 /* StatGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatGraph.swift; sourceTree = "<group>"; };
+		F6CA2C1D2D65B68000F04242 /* PokemonAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAnimationTransition.swift; sourceTree = "<group>"; };
+		F6CA2C1F2D65BCC100F04242 /* CardPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6CA2B932D63296500F04242 /* SnapKit-Dynamic in Frameworks */,
-				F6CA2B962D63297200F04242 /* Then in Frameworks */,
-				F6CA2B8C2D63295300F04242 /* SDWebImage in Frameworks */,
-				F6CA2B912D63296500F04242 /* SnapKit in Frameworks */,
-				F6CA2B8E2D63295300F04242 /* SDWebImageMapKit in Frameworks */,
-				F6CA2B892D63294400F04242 /* CombineCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +175,8 @@
 		F6CA2B842D63267D00F04242 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
+				F6CA2C1D2D65B68000F04242 /* PokemonAnimationTransition.swift */,
+				F6CA2C1F2D65BCC100F04242 /* CardPresentationController.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -192,6 +188,7 @@
 				F6CA2BF22D64239300F04242 /* ImageContainerView.swift */,
 				F6CA2BF42D644C7C00F04242 /* PokemonInfoView.swift */,
 				F6CA2C062D659ACB00F04242 /* PokemonStatView.swift */,
+				F6CA2C082D659B9C00F04242 /* StatGraph.swift */,
 				F6CA2C002D656FCE00F04242 /* LoadingView.swift */,
 			);
 			path = Custom;
@@ -214,12 +211,6 @@
 			);
 			name = "PokeMon-UIKit";
 			packageProductDependencies = (
-				F6CA2B882D63294400F04242 /* CombineCocoa */,
-				F6CA2B8B2D63295300F04242 /* SDWebImage */,
-				F6CA2B8D2D63295300F04242 /* SDWebImageMapKit */,
-				F6CA2B902D63296500F04242 /* SnapKit */,
-				F6CA2B922D63296500F04242 /* SnapKit-Dynamic */,
-				F6CA2B952D63297200F04242 /* Then */,
 			);
 			productName = "PokeMon-UIKit";
 			productReference = F6CA2B4D2D63228B00F04242 /* PokeMon-UIKit.app */;
@@ -250,10 +241,6 @@
 			mainGroup = F6CA2B442D63228B00F04242;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				F6CA2B872D63294400F04242 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
-				F6CA2B8A2D63295300F04242 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				F6CA2B8F2D63296500F04242 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				F6CA2B942D63297200F04242 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F6CA2B4E2D63228B00F04242 /* Products */;
@@ -288,9 +275,11 @@
 				F6CA2C032D6595D300F04242 /* DetailViewModel.swift in Sources */,
 				F6CA2B9A2D6329C600F04242 /* UIViewController+Extension.swift in Sources */,
 				F6CA2B7B2D63264600F04242 /* AppDelegate.swift in Sources */,
+				F6CA2C1E2D65B68000F04242 /* PokemonAnimationTransition.swift in Sources */,
 				F6CA2C072D659ACB00F04242 /* PokemonStatView.swift in Sources */,
 				F6CA2C052D659A6500F04242 /* DetailViewController.swift in Sources */,
 				F6CA2BF92D64563400F04242 /* ListViewModel.swift in Sources */,
+				F6CA2C092D659B9C00F04242 /* StatGraph.swift in Sources */,
 				F6CA2BFB2D6463AE00F04242 /* PokedexServiceType.swift in Sources */,
 				F6CA2BEC2D64153800F04242 /* ThemeFont.swift in Sources */,
 				F6CA2BF72D64562C00F04242 /* ListViewController.swift in Sources */,
@@ -302,6 +291,7 @@
 				F6CA2B862D63291300F04242 /* UIColor+Extension.swift in Sources */,
 				F6CA2BC42D64065300F04242 /* PokemonType.swift in Sources */,
 				F6CA2BEE2D6415B900F04242 /* ThemeColor.swift in Sources */,
+				F6CA2C202D65BCC100F04242 /* CardPresentationController.swift in Sources */,
 				F6CA2C012D656FCE00F04242 /* LoadingView.swift in Sources */,
 				F6CA2BFF2D6481F600F04242 /* PokemonCell.swift in Sources */,
 			);
@@ -518,74 +508,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F6CA2B872D63294400F04242 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.1;
-			};
-		};
-		F6CA2B8A2D63295300F04242 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.20.0;
-			};
-		};
-		F6CA2B8F2D63296500F04242 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
-			};
-		};
-		F6CA2B942D63297200F04242 /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F6CA2B882D63294400F04242 /* CombineCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F6CA2B872D63294400F04242 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
-			productName = CombineCocoa;
-		};
-		F6CA2B8B2D63295300F04242 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F6CA2B8A2D63295300F04242 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-		F6CA2B8D2D63295300F04242 /* SDWebImageMapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F6CA2B8A2D63295300F04242 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImageMapKit;
-		};
-		F6CA2B902D63296500F04242 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F6CA2B8F2D63296500F04242 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		F6CA2B922D63296500F04242 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F6CA2B8F2D63296500F04242 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
-		};
-		F6CA2B952D63297200F04242 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F6CA2B942D63297200F04242 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F6CA2B722D63264600F04242 /* PokeMon_UIKit.xcdatamodeld */ = {

@@ -63,7 +63,7 @@ final class PokemonInfoView: UIView {
     // MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        
+        layout()
     }
     
     required init?(coder: NSCoder) {
@@ -86,6 +86,17 @@ final class PokemonInfoView: UIView {
         }
     }
     
-    
-    
+    func configure(viewModel: DetailViewModel) {
+        nameLabel.text = viewModel.name
+        firstTypeLabel.text = viewModel.firstTypeName
+        secondTypeLabel.text = viewModel.secondTypeName
+        firstTypeLabel.backgroundColor = viewModel.firstTypeColor
+        secondTypeLabel.backgroundColor = viewModel.secondTypeColor
+        weightLabel.attributedText = viewModel.weightText
+        heightLabel.attributedText = viewModel.heightText
+        
+        if secondTypeLabel.text == nil {
+            secondTypeLabel.isHidden = true
+        }
+    }
 }
