@@ -19,14 +19,64 @@ class ListViewController: UIViewController {
         $0.delaysContentTouches = false
     }
     
+    private let loadingView: LoadingView = .init(frame: .zero)
+    private var cancellables: Set<AnyCancellable> = .init()
     
+    var selectedCell: PokemonCell?
+    private let viewModel: ListViewModel
+    
+    // MARK: - LifeCycle
+    init(viewModel: ListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.title = "Pokedex"
+        
+    }
+    
+    // MARK: - Helpers
+    private func layout() {
+        view.backgroundColor = .white
+        
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints {
+            $0.centerX.equalTo(view.snp.centerX)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-16)
+        }
+    }
+    
+    private func bind() {
+        viewModel.setupDataSource(collectionView: self.collectionView)
+        viewModel.pokemonListPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] pokemons in
+                if pokemons.count % 20 == 0 {
+                    self?.viewModel.updateCollectionView(with: pokemons)
+                    self?.loadingView.hideLoadingViewAndStopAnimation()
+                }
+            }.store(in: &cancellables)
+    }
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewLayout()
+        let layout = UICollectionViewFlowLayout()
         let width = view.frame.width/2 - 15
-        layout.itemsize = .init(width: width, height: width + 100)
+        layout.itemSize = .init(width: width, height: width + 100)
         return layout
     }
     
-    
+    private func didSelectItem(at indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? PokemonCell else { return }
+        selectedCell = cell
+        
+        let pokemon = viewModel.pokemonList[indexPath.row]
+        
+    }
 }
