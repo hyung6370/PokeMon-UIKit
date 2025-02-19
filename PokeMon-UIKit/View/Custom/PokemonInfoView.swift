@@ -59,4 +59,33 @@ final class PokemonInfoView: UIView {
         $0.alignment = .fill
         $0.distribution = .fill
     }
+    
+    // MARK: - LifeCycle
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Helpers
+    private func layout() {
+        addSubview(containerView)
+        
+        containerView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(-50)
+            $0.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(20)
+        }
+        
+        containerView.addSubview(vStackView)
+        vStackView.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(10)
+        }
+    }
+    
+    
+    
 }
