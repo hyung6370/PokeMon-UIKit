@@ -116,13 +116,13 @@ final class DetailViewController: UIViewController {
         
         view.addSubview(topHStackView)
         topHStackView.snp.makeConstraints {
-            $0.top.left.right.equalToSuperview().inset(26)
+            $0.top.leading.trailing.equalToSuperview().inset(26)
         }
         
         scrollView.addSubview(vStackView)
         vStackView.snp.makeConstraints {
             $0.width.equalToSuperview()
-            $0.top.left.right.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-30)
         }
         
@@ -245,7 +245,7 @@ extension DetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y < 0 {
             scrollView.contentOffset = .zero
-            
+            draggingDownToDismiss = true
         }
     }
 }

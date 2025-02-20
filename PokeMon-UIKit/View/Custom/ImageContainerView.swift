@@ -22,7 +22,7 @@ final class ImageContainerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        layout()
     }
     
     required init?(coder: NSCoder) {
@@ -76,7 +76,7 @@ final class ImageContainerView: UIView {
     
     func setImageViewContentInset(inset: CGFloat) {
         pokemonImageView.snp.updateConstraints {
-            $0.bottom.left.right.equalToSuperview().inset(inset)
+            $0.bottom.leading.trailing.equalToSuperview().inset(inset)
             $0.top.equalToSuperview().inset(inset + 50)
         }
     }

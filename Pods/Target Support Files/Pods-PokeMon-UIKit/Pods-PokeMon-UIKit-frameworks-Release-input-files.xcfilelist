@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-PokeMon-UIKit/Pods-PokeMon-UIKit-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CombineCocoa/CombineCocoa.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/Then/Then.framework

@@ -39,7 +39,15 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Pokedex"
+        layout()
+        bind()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        view.layoutIfNeeded()
         
+        loadingView.setLoadingViewCornerRadius()
     }
     
     // MARK: - Helpers
@@ -48,6 +56,11 @@ class ListViewController: UIViewController {
         
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        view.addSubview(loadingView)
+        loadingView.snp.makeConstraints {
             $0.centerX.equalTo(view.snp.centerX)
             $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-16)
         }
@@ -63,6 +76,17 @@ class ListViewController: UIViewController {
                     self?.loadingView.hideLoadingViewAndStopAnimation()
                 }
             }.store(in: &cancellables)
+        
+        collectionView.reachedBottomPublisher()
+            .sink { [weak self] _ in
+                self?.loadingView.showLoadingViewAndStartAnimation()
+                self?.viewModel.nextPage()
+            }.store(in: &cancellables)
+        
+        collectionView.didSelectItemPublisher
+            .sink { [weak self] indexPath in
+                self?.didSelectItem(at: indexPath)
+            }.store(in: &cancellables)
     }
     
     private func createFlowLayout() -> UICollectionViewFlowLayout {
@@ -77,6 +101,13 @@ class ListViewController: UIViewController {
         selectedCell = cell
         
         let pokemon = viewModel.pokemonList[indexPath.row]
+        let detailVM = DetailViewModel(pokemon: pokemon)
+        let detailVC = DetailViewController(viewModel: detailVM)
         
+        detailVC.modalPresentationStyle = .custom
+        detailVC.transitioningDelegate = detailVC
+        detailVC.modalPresentationCapturesStatusBarAppearance = true
+        
+        present(detailVC, animated: true)
     }
 }
