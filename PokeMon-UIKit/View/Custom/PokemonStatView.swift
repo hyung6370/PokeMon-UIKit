@@ -23,7 +23,7 @@ final class PokemonStatView: UIView {
     }
     
     private let titleLabel = UILabel().then {
-        $0.text = "Base Stats"
+        $0.text = "기본 스탯!"
         $0.font = ThemeFont.bold(ofSize: 14)
         $0.textAlignment = .center
     }
@@ -58,7 +58,8 @@ final class PokemonStatView: UIView {
             $0.edges.equalToSuperview().inset(20)
         }
         
-        containerView.snp.makeConstraints {
+        containerView.addSubview(vStackView)
+        vStackView.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(10)
         }
     }

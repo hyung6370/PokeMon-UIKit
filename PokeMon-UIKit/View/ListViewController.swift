@@ -38,7 +38,7 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Pokedex"
+        navigationItem.title = "포켓몬 도감"
         layout()
         bind()
     }

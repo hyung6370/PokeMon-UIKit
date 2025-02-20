@@ -32,12 +32,11 @@ final class ImageContainerView: UIView {
     // MARK: - Helpers
     private func layout() {
         addSubview(containerView)
-        containerView.addSubview(pokemonImageView)
-        
         containerView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         
+        containerView.addSubview(pokemonImageView)
         pokemonImageView.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(15)
         }
@@ -75,7 +74,7 @@ final class ImageContainerView: UIView {
     }
     
     func setImageViewContentInset(inset: CGFloat) {
-        pokemonImageView.snp.updateConstraints {
+        pokemonImageView.snp.remakeConstraints {
             $0.bottom.leading.trailing.equalToSuperview().inset(inset)
             $0.top.equalToSuperview().inset(inset + 50)
         }
