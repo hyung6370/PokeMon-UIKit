@@ -35,6 +35,7 @@
 		F6CA2C092D659B9C00F04242 /* StatGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2C082D659B9C00F04242 /* StatGraph.swift */; };
 		F6CA2C1E2D65B68000F04242 /* PokemonAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2C1D2D65B68000F04242 /* PokemonAnimationTransition.swift */; };
 		F6CA2C202D65BCC100F04242 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2C1F2D65BCC100F04242 /* CardPresentationController.swift */; };
+		F6CA2C312D66FF3F00F04242 /* PokemonSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2C302D66FF3F00F04242 /* PokemonSpecies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		F6CA2C082D659B9C00F04242 /* StatGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatGraph.swift; sourceTree = "<group>"; };
 		F6CA2C1D2D65B68000F04242 /* PokemonAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAnimationTransition.swift; sourceTree = "<group>"; };
 		F6CA2C1F2D65BCC100F04242 /* CardPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
+		F6CA2C302D66FF3F00F04242 /* PokemonSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSpecies.swift; sourceTree = "<group>"; };
 		FEB80577F0BB7ACE9C6A47C8 /* Pods-PokeMon-UIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeMon-UIKit.release.xcconfig"; path = "Target Support Files/Pods-PokeMon-UIKit/Pods-PokeMon-UIKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +164,7 @@
 			children = (
 				F6CA2B9B2D63303400F04242 /* Pokemon.swift */,
 				F6CA2BC32D64065300F04242 /* PokemonType.swift */,
+				F6CA2C302D66FF3F00F04242 /* PokemonSpecies.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				F6CA2B7B2D63264600F04242 /* AppDelegate.swift in Sources */,
 				F6CA2C1E2D65B68000F04242 /* PokemonAnimationTransition.swift in Sources */,
 				F6CA2C072D659ACB00F04242 /* PokemonStatView.swift in Sources */,
+				F6CA2C312D66FF3F00F04242 /* PokemonSpecies.swift in Sources */,
 				F6CA2C052D659A6500F04242 /* DetailViewController.swift in Sources */,
 				F6CA2BF92D64563400F04242 /* ListViewModel.swift in Sources */,
 				F6CA2C092D659B9C00F04242 /* StatGraph.swift in Sources */,
