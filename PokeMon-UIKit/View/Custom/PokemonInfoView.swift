@@ -87,7 +87,7 @@ final class PokemonInfoView: UIView {
     }
     
     func configure(viewModel: DetailViewModel) {
-        nameLabel.text = viewModel.name
+        nameLabel.text = viewModel.koreanName
         firstTypeLabel.text = viewModel.firstTypeName
         secondTypeLabel.text = viewModel.secondTypeName
         firstTypeLabel.backgroundColor = viewModel.firstTypeColor

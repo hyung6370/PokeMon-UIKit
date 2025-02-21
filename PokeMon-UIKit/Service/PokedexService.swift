@@ -51,13 +51,38 @@ class PokedexService: PokedexServiceType {
         
         response.results.forEach { result in
             self.fetchPokemon(result: result)
-                .sink { completion in
+                .flatMap { [weak self] pokemon -> AnyPublisher<Pokemon, Never> in
+                    guard let self = self else { return Just(pokemon).eraseToAnyPublisher() }
                     
-                } receiveValue: { [weak self] pokemon in
-                    guard let self = self else { return }
-                    self.pokemonListPublisher.value.append(pokemon)
-                    self.pokemonListPublisher.value.sort(by: { $0.id < $1.id })
-                }.store(in: &self.cancellables)
+                    return self.fetchPokemonSpecies(id: pokemon.id)
+                        .map { species -> Pokemon in
+                            var modifiedPokemon = pokemon
+                            modifiedPokemon.koreanName = species.name
+                            modifiedPokemon.koreanDescription = species.flavorText
+                            return modifiedPokemon
+                        }
+                        .replaceError(with: pokemon)
+                        .eraseToAnyPublisher()
+                }
+                .sink { _ in }
+            receiveValue: { [weak self] pokemon in
+                guard let self = self else { return }
+                self.pokemonListPublisher.value.append(pokemon)
+                self.pokemonListPublisher.value.sort(by: { $0.id < $1.id })
+            }.store(in: &self.cancellables)
         }
+    }
+    
+    // MARK: - 한국어 서비스
+    func fetchPokemonSpecies(id: Int) -> AnyPublisher<PokemonSpecies, any Error> {
+        let url = "https://pokeapi.co/api/v2/pokemon-species/\(id)"
+        
+        return httpRequestPublisher(for: url, decodeType: PokemonSpeciesResponse.self)
+            .tryMap { response in
+                guard let pokemonSpecies = response.extractKoreanInfo() else {
+                    throw URLError(.badServerResponse)
+                }
+                return pokemonSpecies
+            }.eraseToAnyPublisher()
     }
 }

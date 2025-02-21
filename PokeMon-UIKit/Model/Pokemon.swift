@@ -34,6 +34,9 @@ struct Pokemon: Codable, Hashable {
     private let types: [TypeElement]
     let weight: Int
     
+    var koreanName: String?
+    var koreanDescription: String?
+    
     var pokemonTypes: [PokemonType] {
         return types.map { PokemonType(rawValue: $0.type.name) ?? .normal }
     }

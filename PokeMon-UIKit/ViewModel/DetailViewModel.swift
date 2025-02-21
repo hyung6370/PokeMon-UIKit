@@ -10,9 +10,31 @@ import Combine
 
 final class DetailViewModel {
     private let pokemon: Pokemon
+    private let service: PokedexService
+    private var cancellables = Set<AnyCancellable>()
     
-    init(pokemon: Pokemon) {
+    @Published var koreanName: String = ""
+    @Published var koreanDescription: String = ""
+    
+    init(pokemon: Pokemon, service: PokedexService = PokedexService()) {
         self.pokemon = pokemon
+        self.service = service
+        fetchPokemonSpecies()
+    }
+    
+    private func fetchPokemonSpecies() {
+        service.fetchPokemonSpecies(id: pokemon.id)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure(let error):
+                    print("Error fetching Pokemon species: (DetailVM)", error)
+                case .finished:
+                    break
+                }
+            }, receiveValue: { [weak self] species in
+                self?.koreanName = species.name
+                self?.koreanDescription = species.flavorText
+            }).store(in: &cancellables)
     }
     
     var imageURL: String {

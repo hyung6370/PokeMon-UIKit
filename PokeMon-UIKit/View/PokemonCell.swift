@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 import SDWebImage
+import Combine
 
 final class PokemonCell: UICollectionViewCell {
     // MARK: - Properties
@@ -89,8 +90,7 @@ final class PokemonCell: UICollectionViewCell {
             color: ThemeColor.typeColor(type: pokemon.pokemonTypes.first ?? .normal).withAlphaComponent(0.6)
         )
         tagLabel.text = "No.\(pokemon.tag)"
-        nameLabel.text = pokemon.name
-        
+        nameLabel.text = pokemon.koreanName ?? pokemon.name
         firstTypeLabel.text = pokemon.pokemonTypes.first?.rawValue
         firstTypeLabel.backgroundColor = ThemeColor.typeColor(type: pokemon.pokemonTypes.first!)
         if pokemon.pokemonTypes.count >= 2 {
