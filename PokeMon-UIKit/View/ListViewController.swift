@@ -39,6 +39,7 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "포켓몬 도감"
+//        self.tabBarItem = UITabBarItem(title: "All", image: UIImage(systemName: "books.vertical.fill"), tag: 0)
         setupNavigationBar()
         layout()
         bind()

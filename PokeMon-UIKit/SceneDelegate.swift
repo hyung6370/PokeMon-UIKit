@@ -15,7 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        
         let pokedexService = PokedexService()
         let listVM = ListViewModel(pokedexService: pokedexService)
         let mainVC = ListViewController(viewModel: listVM)
@@ -23,8 +22,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window.rootViewController = nav
         self.window = window
-        
         window.makeKeyAndVisible()
+        
+//        self.window = UIWindow(windowScene: windowScene)
+//        
+//        let pokdexService = PokedexService()
+//        let listVM = ListViewModel(pokedexService: pokdexService)
+//        let listNav = UINavigationController(rootViewController: ListViewController(viewModel: listVM))
+//        let searchNav = UINavigationController(rootViewController: SearchViewController())
+//        let favNav = UINavigationController(rootViewController: FavViewController())
+//        
+//        let tabBarController = UITabBarController()
+//        tabBarController.viewControllers = [listNav, searchNav, favNav]
+//        self.window?.rootViewController = tabBarController
+//        self.window?.makeKeyAndVisible()
+        
     }
 }
 
