@@ -39,6 +39,7 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "포켓몬 도감"
+        setupNavigationBar()
         layout()
         bind()
     }
@@ -48,6 +49,21 @@ class ListViewController: UIViewController {
         view.layoutIfNeeded()
         
         loadingView.setLoadingViewCornerRadius()
+    }
+    
+    private func setupNavigationBar() {
+        let searchBtn = UIBarButtonItem(
+            image: UIImage(systemName: "magnifyingglass"),
+            style: .plain,
+            target: self,
+            action: #selector(searchButtonTapped)
+        )
+        
+        navigationItem.rightBarButtonItem = searchBtn
+    }
+    
+    @objc private func searchButtonTapped() {
+        print("검색 버튼 클릭됨")
     }
     
     // MARK: - Helpers
