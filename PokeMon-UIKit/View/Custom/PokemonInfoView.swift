@@ -8,9 +8,11 @@
 import UIKit
 import SnapKit
 import Then
+import Combine
 
 final class PokemonInfoView: UIView {
     // MARK: - Properties
+    private var cancellables = Set<AnyCancellable>()
     private let containerView = UIView().then {
         $0.backgroundColor = .white
         $0.addShadow(
@@ -87,7 +89,12 @@ final class PokemonInfoView: UIView {
     }
     
     func configure(viewModel: DetailViewModel) {
-        nameLabel.text = viewModel.koreanName
+        viewModel.$koreanName
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newName in
+                self?.nameLabel.text = newName.isEmpty ? "" : newName
+                print("Updated nameLabel.text: \(self?.nameLabel.text ?? "nil")")
+            }.store(in: &cancellables)
         firstTypeLabel.text = viewModel.firstTypeName
         secondTypeLabel.text = viewModel.secondTypeName
         firstTypeLabel.backgroundColor = viewModel.firstTypeColor

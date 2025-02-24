@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5CDDE857-39B8-441B-84C2-C8765664109A"
+            uuid = "927E900E-3F0E-4D86-BAFA-B15275EA0E6C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PokeMon-UIKit/View/ListViewController.swift"
+            filePath = "PokeMon-UIKit/View/Custom/PokemonInfoView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "didSelectItem(at:)"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "configure(viewModel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

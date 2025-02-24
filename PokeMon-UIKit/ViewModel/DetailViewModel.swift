@@ -28,6 +28,7 @@ final class DetailViewModel {
                 switch completion {
                 case .failure(let error):
                     print("Error fetching Pokemon species: (DetailVM)", error)
+                    self.koreanName = self.pokemon.name
                 case .finished:
                     break
                 }
