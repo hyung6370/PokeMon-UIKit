@@ -40,7 +40,34 @@
 		F6E7D4E82D6C6074008B0724 /* FavViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E7D4E72D6C6074008B0724 /* FavViewModel.swift */; };
 		F6E7D4EA2D6C67E9008B0724 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E7D4E92D6C67E9008B0724 /* SearchViewController.swift */; };
 		F6E7D4EC2D6C6802008B0724 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E7D4EB2D6C6802008B0724 /* SearchViewModel.swift */; };
+		F6E7D4F32D6D4939008B0724 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E7D4F22D6D4939008B0724 /* WidgetKit.framework */; };
+		F6E7D4F52D6D4939008B0724 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E7D4F42D6D4939008B0724 /* SwiftUI.framework */; };
+		F6E7D5062D6D493A008B0724 /* PokeMonWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F6E7D4F12D6D4939008B0724 /* PokeMonWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F6E7D5042D6D493A008B0724 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F6CA2B452D63228B00F04242 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6E7D4F02D6D4939008B0724;
+			remoteInfo = PokeMonWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F6E7D50B2D6D493A008B0724 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F6E7D5062D6D493A008B0724 /* PokeMonWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EAAFB3C8918D37FDE28CFD17 /* Pods_PokeMon_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeMon_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,8 +106,32 @@
 		F6E7D4E72D6C6074008B0724 /* FavViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavViewModel.swift; sourceTree = "<group>"; };
 		F6E7D4E92D6C67E9008B0724 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F6E7D4EB2D6C6802008B0724 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		F6E7D4F12D6D4939008B0724 /* PokeMonWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PokeMonWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6E7D4F22D6D4939008B0724 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		F6E7D4F42D6D4939008B0724 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		FEB80577F0BB7ACE9C6A47C8 /* Pods-PokeMon-UIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeMon-UIKit.release.xcconfig"; path = "Target Support Files/Pods-PokeMon-UIKit/Pods-PokeMon-UIKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F6E7D5072D6D493A008B0724 /* Exceptions for "PokeMonWidget" folder in "PokeMonWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F6E7D4F02D6D4939008B0724 /* PokeMonWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F6E7D4F62D6D4939008B0724 /* PokeMonWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F6E7D5072D6D493A008B0724 /* Exceptions for "PokeMonWidget" folder in "PokeMonWidgetExtension" target */,
+			);
+			path = PokeMonWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F6CA2B4A2D63228B00F04242 /* Frameworks */ = {
@@ -91,6 +142,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6E7D4EE2D6D4939008B0724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6E7D4F52D6D4939008B0724 /* SwiftUI.framework in Frameworks */,
+				F6E7D4F32D6D4939008B0724 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -98,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				EAAFB3C8918D37FDE28CFD17 /* Pods_PokeMon_UIKit.framework */,
+				F6E7D4F22D6D4939008B0724 /* WidgetKit.framework */,
+				F6E7D4F42D6D4939008B0724 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				F6CA2B752D63264600F04242 /* PokeMon-UIKit */,
+				F6E7D4F62D6D4939008B0724 /* PokeMonWidget */,
 				F6CA2B4E2D63228B00F04242 /* Products */,
 				BE403A17F851B9392888C671 /* Pods */,
 				9BE709826394F434E3F99B0B /* Frameworks */,
@@ -125,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				F6CA2B4D2D63228B00F04242 /* PokeMon-UIKit.app */,
+				F6E7D4F12D6D4939008B0724 /* PokeMonWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,15 +309,39 @@
 				F6CA2B4A2D63228B00F04242 /* Frameworks */,
 				F6CA2B4B2D63228B00F04242 /* Resources */,
 				4C3DBEB87184DCFC197D36A5 /* [CP] Embed Pods Frameworks */,
+				F6E7D50B2D6D493A008B0724 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F6E7D5052D6D493A008B0724 /* PBXTargetDependency */,
 			);
 			name = "PokeMon-UIKit";
 			productName = "PokeMon-UIKit";
 			productReference = F6CA2B4D2D63228B00F04242 /* PokeMon-UIKit.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F6E7D4F02D6D4939008B0724 /* PokeMonWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6E7D5082D6D493A008B0724 /* Build configuration list for PBXNativeTarget "PokeMonWidgetExtension" */;
+			buildPhases = (
+				F6E7D4ED2D6D4939008B0724 /* Sources */,
+				F6E7D4EE2D6D4939008B0724 /* Frameworks */,
+				F6E7D4EF2D6D4939008B0724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F6E7D4F62D6D4939008B0724 /* PokeMonWidget */,
+			);
+			name = PokeMonWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = PokeMonWidgetExtension;
+			productReference = F6E7D4F12D6D4939008B0724 /* PokeMonWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -266,6 +354,9 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					F6CA2B4C2D63228B00F04242 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					F6E7D4F02D6D4939008B0724 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -285,6 +376,7 @@
 			projectRoot = "";
 			targets = (
 				F6CA2B4C2D63228B00F04242 /* PokeMon-UIKit */,
+				F6E7D4F02D6D4939008B0724 /* PokeMonWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -296,6 +388,13 @@
 			files = (
 				F6CA2B772D63264600F04242 /* Assets.xcassets in Resources */,
 				F6CA2B792D63264600F04242 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6E7D4EF2D6D4939008B0724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +480,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6E7D4ED2D6D4939008B0724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F6E7D5052D6D493A008B0724 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6E7D4F02D6D4939008B0724 /* PokeMonWidgetExtension */;
+			targetProxy = F6E7D5042D6D493A008B0724 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F6CA2B6F2D63264600F04242 /* LaunchScreen.storyboard */ = {
@@ -411,6 +525,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,6 +555,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -572,6 +688,64 @@
 			};
 			name = Release;
 		};
+		F6E7D5092D6D493A008B0724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7DVWGZFH6N;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PokeMonWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PokeMonWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emptyhead.PokeMon-UIKit.PokeMonWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F6E7D50A2D6D493A008B0724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7DVWGZFH6N;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PokeMonWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PokeMonWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emptyhead.PokeMon-UIKit.PokeMonWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -589,6 +763,15 @@
 			buildConfigurations = (
 				F6CA2B642D63228C00F04242 /* Debug */,
 				F6CA2B652D63228C00F04242 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6E7D5082D6D493A008B0724 /* Build configuration list for PBXNativeTarget "PokeMonWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6E7D5092D6D493A008B0724 /* Debug */,
+				F6E7D50A2D6D493A008B0724 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
