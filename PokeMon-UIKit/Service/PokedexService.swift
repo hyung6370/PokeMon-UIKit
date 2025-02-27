@@ -69,6 +69,9 @@ class PokedexService: PokedexServiceType {
                 guard let self = self else { return }
                 self.pokemonListPublisher.value.append(pokemon)
                 self.pokemonListPublisher.value.sort(by: { $0.id < $1.id })
+                
+                PokeMonWidgetManager.shared.savePokemonList(self.pokemonListPublisher.value)
+                print("✅ savePokemonList: 저장된 포켓몬 개수 \(self.pokemonListPublisher.value.count)개")
             }.store(in: &self.cancellables)
         }
     }

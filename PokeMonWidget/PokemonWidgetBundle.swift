@@ -1,8 +1,8 @@
 //
 //  PokemonWidgetBundle.swift
-//  PokemonWidget
+//  PokemonWidgetExtension
 //
-//  Created by Hyungjun KIM on 2/26/25.
+//  Created by Hyungjun KIM on 2/27/25.
 //
 
 import WidgetKit
@@ -10,9 +10,8 @@ import SwiftUI
 
 @main
 struct PokemonWidgetBundle: WidgetBundle {
+    @WidgetBundleBuilder
     var body: some Widget {
         PokemonWidget()
-        PokemonWidgetControl()
-        PokemonWidgetLiveActivity()
     }
 }
