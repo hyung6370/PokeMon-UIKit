@@ -9,6 +9,7 @@ target 'PokeMon-UIKit' do
 pod 'Then'
 pod 'SnapKit'
 pod 'SDWebImage'
+pod 'SDWebImageSwiftUI'
 pod 'CombineCocoa'
 
 end
