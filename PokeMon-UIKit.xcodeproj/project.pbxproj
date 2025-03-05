@@ -11,6 +11,7 @@
 		F608F0742D76C634002A7EBF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608F0732D76C634002A7EBF /* UIImage+Extension.swift */; };
 		F608F0782D76D220002A7EBF /* PokemonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608F0772D76D220002A7EBF /* PokemonImageView.swift */; };
 		F608F0792D76ED71002A7EBF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608F0732D76C634002A7EBF /* UIImage+Extension.swift */; };
+		F608F08F2D780D7F002A7EBF /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2BED2D6415B900F04242 /* ThemeColor.swift */; };
 		F63ACA2A2D6FF1F600D8F234 /* PokemonWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63ACA292D6FF1F600D8F234 /* PokemonWidgetEntryView.swift */; };
 		F63ACA2B2D6FF74200D8F234 /* PokedexServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2BFA2D6463AE00F04242 /* PokedexServiceType.swift */; };
 		F63ACA2C2D6FF74700D8F234 /* PokedexService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CA2BFC2D6466D900F04242 /* PokedexService.swift */; };
@@ -484,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F608F08F2D780D7F002A7EBF /* ThemeColor.swift in Sources */,
 				F63ACA2C2D6FF74700D8F234 /* PokedexService.swift in Sources */,
 				F696E9D82D6EE6410011910A /* Pokemon.swift in Sources */,
 				F63ACA452D6FFC2E00D8F234 /* View+Extension.swift in Sources */,
