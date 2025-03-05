@@ -14,12 +14,20 @@ struct PokemonWidgetEntryView: View {
         ZStack {
             if let pokemon = entry.pokemon {
                 VStack {
-                    AsyncImage(url: URL(string: pokemon.imageUrl)) { image in
-                        image.resizable()
-                    } placeholder: {
-                        ProgressView()
-                    }.frame(width: 80, height: 80)
-                    
+                    if let cachedImage = PokeMonWidgetManager.shared.getCachedImage(for: pokemon.imageUrl) {
+                        Image(uiImage: cachedImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80, height: 80)
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                    } else {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(.gray)
+                    }
+
                     Text(pokemon.koreanName ?? "")
                         .font(.headline)
                         .bold()
@@ -39,20 +47,3 @@ struct PokemonWidgetEntryView: View {
         .widgetBackground(.white)
     }
 }
-
-//// MARK: - 미리보기
-//#Preview {
-//    PokemonWidgetEntryView(entry: PokemonEntry(
-//        date: Date(),
-//        pokemon: Pokemon(
-//            height: 10,
-//            id: 25,
-//            name: "pikachu",
-//            stats: [],
-//            weight: 60,
-//            koreanName: "피카츄",
-//            koreanDescription: "전기를 다룰 수 있는 귀여운 포켓몬",
-//            pokemonTypes: [.electric]
-//        )
-//    ))
-//}

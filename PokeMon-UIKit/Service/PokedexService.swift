@@ -70,8 +70,9 @@ class PokedexService: PokedexServiceType {
                 self.pokemonListPublisher.value.append(pokemon)
                 self.pokemonListPublisher.value.sort(by: { $0.id < $1.id })
                 
+                print("✅ Saving \(self.pokemonListPublisher.value.count) Pokémon to UserDefaults")
                 PokeMonWidgetManager.shared.savePokemonList(self.pokemonListPublisher.value)
-                print("✅ savePokemonList: 저장된 포켓몬 개수 \(self.pokemonListPublisher.value.count)개")
+                print("🟢 fetchPokemonList() after saving: \(PokeMonWidgetManager.shared.fetchPokemonList().count) Pokémon")
             }.store(in: &self.cancellables)
         }
     }
