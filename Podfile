@@ -11,5 +11,6 @@ pod 'SnapKit'
 pod 'SDWebImage'
 pod 'SDWebImageSwiftUI'
 pod 'CombineCocoa'
+pod 'lottie-ios'
 
 end
