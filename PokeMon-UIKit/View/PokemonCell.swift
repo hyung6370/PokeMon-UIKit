@@ -135,7 +135,7 @@ final class PokemonCell: UICollectionViewCell {
                 initialSpringVelocity: 0,
                 options: [.allowUserInteraction],
                 animations: {
-                    self.transform = .identity // 원상태로 복구
+                    self.transform = .identity
                 }, completion: nil
             )
         }
