@@ -12,19 +12,12 @@ import Lottie
 
 class IntroViewController: UIViewController {
     private let selectedAnimation: String
-    
-    private let animationView = LottieAnimationView().then {
-        let animations = ["first", "second"]
-        let selected = animations.randomElement() ?? "first"
-        $0.animation = LottieAnimation.named(selected)
-        $0.contentMode = .scaleAspectFit
-        $0.loopMode = .loop
-        $0.animationSpeed = 1.0
-    }
+    private let animationView: LottieAnimationView
     
     init() {
         let animations = ["first", "second"]
         self.selectedAnimation = animations.randomElement() ?? "first"
+        self.animationView = LottieAnimationView(name: self.selectedAnimation)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -41,6 +34,11 @@ class IntroViewController: UIViewController {
     
     private func configureUI() {
         view.backgroundColor = selectedAnimation == "first" ? UIColor(hex: "FFFADD") : UIColor(hex: "EBF5E0")
+        
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 1.0
+        
         view.addSubview(animationView)
         
         animationView.snp.makeConstraints {
