@@ -63,7 +63,7 @@ class IntroViewController: UIViewController {
     
     private func fadeOutAndMoveToMainScreen() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.view.alpha = 0 // 화면 서서히 투명하게
+            self.view.alpha = 0
         }) { _ in
             self.moveToMainScreen()
         }

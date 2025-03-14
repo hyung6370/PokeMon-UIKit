@@ -13,6 +13,5 @@ class FavViewController: UIViewController {
         super.viewDidLoad()
         self.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(systemName: "heart.fill"), tag: 2)
         view.backgroundColor = .blue
-        
     }
 }
