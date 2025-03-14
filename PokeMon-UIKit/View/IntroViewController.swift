@@ -80,6 +80,13 @@ class IntroViewController: UIViewController {
             sceneDelegate.window?.makeKeyAndVisible()
             
             UIView.transition(with: sceneDelegate.window!, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+            
+            if let deepLinkURL = sceneDelegate.pendingDeepLinkURL {
+                sceneDelegate.pendingDeepLinkURL = nil
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    sceneDelegate.handleDeepLink(deepLinkURL)
+                }
+            }
         }
     }
 }

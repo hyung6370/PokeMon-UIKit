@@ -11,6 +11,11 @@ import SwiftUI
 struct PokemonEntry: TimelineEntry {
     let date: Date
     let pokemon: Pokemon?
+    
+    var deepLinkURL: URL? {
+        guard let pokemon = pokemon else { return nil }
+        return URL(string: "pokemonapp://detail?id=\(pokemon.id)")
+    }
 }
 
 struct PokemonProvider: TimelineProvider {

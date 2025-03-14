@@ -96,6 +96,7 @@ final class DetailViewController: UIViewController {
         
         layout()
         setupTransition()
+        bind()
     }
     
     override func viewDidLayoutSubviews() {
