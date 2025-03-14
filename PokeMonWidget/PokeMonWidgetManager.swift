@@ -16,27 +16,38 @@ class PokeMonWidgetManager {
     
     func savePokemonList(_ pokemonList: [Pokemon]) {
         guard let data = try? JSONEncoder().encode(pokemonList) else {
+#if DEBUG
             print("❌ savePokemonList: 포켓몬 리스트 인코딩 실패!")
+#endif
+            
             return
         }
         userDefaults?.set(data, forKey: pokemonKey)
+#if DEBUG
         print("✅ savePokemonList: 포켓몬 \(pokemonList.count)개 저장 완료!")
+#endif
         
         cachePokemonImages(pokemonList)
     }
     
     func fetchPokemonList() -> [Pokemon] {
         guard let data = userDefaults?.data(forKey: pokemonKey) else {
+#if DEBUG
             print("❌ fetchPokemonList: 저장된 포켓몬 데이터가 없습니다.")
+#endif
             return []
         }
         
         do {
             let pokemonList = try JSONDecoder().decode([Pokemon].self, from: data)
+#if DEBUG
             print("✅ fetchPokemonList: 불러온 포켓몬 리스트 \(pokemonList.count)개")
+#endif
             return pokemonList
         } catch {
+#if DEBUG
             print("❌ fetchPokemonList: 데이터 디코딩 실패 - \(error)")
+#endif
             return []
         }
     }

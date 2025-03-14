@@ -85,8 +85,6 @@ final class StatGraph: UIView {
         statLabel.text = "\(statValue)/300"
         graphView.backgroundColor = statColor
         
-        print("🔵 StatGraph.configure() 실행됨 - \(statName): \(statValue), 색상: \(statColor)")
-        
         DispatchQueue.main.async {
             self.updateGraph(statValue: statValue, statColor: statColor)
         }
@@ -97,8 +95,6 @@ final class StatGraph: UIView {
         
         let graphWidth = self.graphBackground.frame.width / 300.0 * CGFloat(statValue)
         
-        print("🟢 graphWidth: \(graphWidth), backgroundWidth: \(self.graphBackground.frame.width)")
-
         if graphWidth <= 50 {
             statLabel.snp.remakeConstraints {
                 $0.left.equalTo(graphView.snp.right).offset(5)

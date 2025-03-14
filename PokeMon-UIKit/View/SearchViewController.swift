@@ -13,6 +13,5 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         self.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
         view.backgroundColor = .red
-        
     }
 }
