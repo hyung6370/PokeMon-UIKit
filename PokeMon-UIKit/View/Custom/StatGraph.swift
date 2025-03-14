@@ -85,18 +85,35 @@ final class StatGraph: UIView {
         statLabel.text = "\(statValue)/300"
         graphView.backgroundColor = statColor
         
-        let graphWidth = graphBackground.frame.width / 300.0 * CGFloat(statValue)
+        print("🔵 StatGraph.configure() 실행됨 - \(statName): \(statValue), 색상: \(statColor)")
         
+        DispatchQueue.main.async {
+            self.updateGraph(statValue: statValue, statColor: statColor)
+        }
+    }
+    
+    private func updateGraph(statValue: Int, statColor: UIColor) {
+        self.layoutIfNeeded()
+        
+        let graphWidth = self.graphBackground.frame.width / 300.0 * CGFloat(statValue)
+        
+        print("🟢 graphWidth: \(graphWidth), backgroundWidth: \(self.graphBackground.frame.width)")
+
         if graphWidth <= 50 {
             statLabel.snp.remakeConstraints {
-                $0.left.equalTo(graphView.snp.right)
+                $0.left.equalTo(graphView.snp.right).offset(5)
                 $0.top.bottom.equalToSuperview()
             }
             statLabel.textColor = .black
+        } else {
+            statLabel.snp.remakeConstraints {
+                $0.right.equalTo(graphView.snp.right).inset(5)
+                $0.top.bottom.equalToSuperview()
+            }
+            statLabel.textColor = .white
         }
         
-        graphView.snp.updateConstraints {
-            $0.left.bottom.top.equalToSuperview()
+        self.graphView.snp.updateConstraints {
             $0.width.equalTo(graphWidth)
         }
         
