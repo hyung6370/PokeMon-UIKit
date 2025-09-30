@@ -5,7 +5,7 @@
 //  Created by Hyungjun KIM on 2/27/25.
 //
 
-import SwiftUICore
+import SwiftUI
 
 extension View {
     func widgetBackground(_ color: Color) -> some View {

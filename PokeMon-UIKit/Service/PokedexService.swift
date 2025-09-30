@@ -12,6 +12,8 @@ class PokedexService: PokedexServiceType {
     private var cancellables: Set<AnyCancellable> = .init()
     var pokemonListPublisher: CurrentValueSubject<[Pokemon], Never> = .init([])
     private var nextUrl: String? = nil
+    private var isLoading: Bool = false
+    private var hasMoreData: Bool = true
     
     init() {
         fetchFirstPokedexResponse()
@@ -28,17 +30,28 @@ class PokedexService: PokedexServiceType {
     }
     
     func fetchNextPokedexResponse() {
-        guard let nextUrl = nextUrl else {
+        guard let nextUrl = nextUrl, !isLoading, hasMoreData else {
             return
         }
         
+        isLoading = true
+        
         httpRequestPublisher(for: nextUrl, decodeType: PokedexResponse.self)
             .eraseToAnyPublisher()
-            .sink { _ in
-                
+            .sink { [weak self] completion in
+                self?.isLoading = false
+                if case .failure = completion {
+                    print("❌ Failed to fetch next page: \(completion)")
+                }
             } receiveValue: { [weak self] response in
                 self?.makePokemonListUseResponse(response)
             }.store(in: &cancellables)
+    }
+    
+    func preloadNextPageIfNeeded(currentItemCount: Int) {
+        if currentItemCount >= 20 && nextUrl != nil && !isLoading && hasMoreData {
+            fetchNextPokedexResponse()
+        }
     }
     
     private func fetchPokemon(result: PokedexResponse.PokedexResult) -> AnyPublisher<Pokemon, Error> {
@@ -46,7 +59,6 @@ class PokedexService: PokedexServiceType {
     }
     
     private func makePokemonListUseResponse(_ response: PokedexResponse) {
-        // 다음 페이지 url 저장
         self.nextUrl = response.next
         
         response.results.forEach { result in
@@ -67,10 +79,18 @@ class PokedexService: PokedexServiceType {
                 .sink { _ in }
             receiveValue: { [weak self] pokemon in
                 guard let self = self else { return }
-                self.pokemonListPublisher.value.append(pokemon)
+                
+                if let idx = self.pokemonListPublisher.value.firstIndex(where: { $0.id == pokemon.id }) {
+                    self.pokemonListPublisher.value[idx] = pokemon
+                } else {
+                    self.pokemonListPublisher.value.append(pokemon)
+                }
+                
+                // 정렬 유지
                 self.pokemonListPublisher.value.sort(by: { $0.id < $1.id })
                 
-                print("✅ Saving \(self.pokemonListPublisher.value.count) Pokémon to UserDefaults")
+                // 저장
+                print("✅ Saving \(self.pokemonListPublisher.value.count) Pokémon to UserDefulats")
                 PokeMonWidgetManager.shared.savePokemonList(self.pokemonListPublisher.value)
                 print("🟢 fetchPokemonList() after saving: \(PokeMonWidgetManager.shared.fetchPokemonList().count) Pokémon")
             }.store(in: &self.cancellables)

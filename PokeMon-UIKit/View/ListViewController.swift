@@ -87,13 +87,13 @@ class ListViewController: UIViewController {
         viewModel.pokemonListPublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] pokemons in
-                if pokemons.count % 20 == 0 {
-                    self?.viewModel.updateCollectionView(with: pokemons)
-                    self?.loadingView.hideLoadingViewAndStopAnimation()
-                }
+                self?.viewModel.updateCollectionView(with: pokemons)
+                self?.loadingView.hideLoadingViewAndStopAnimation()
             }.store(in: &cancellables)
         
-        collectionView.reachedBottomPublisher()
+        collectionView
+            .reachedBottomPublisher(offset: 200)
+            .throttle(for: .milliseconds(600), scheduler: RunLoop.main, latest: true)
             .sink { [weak self] _ in
                 self?.loadingView.showLoadingViewAndStartAnimation()
                 self?.viewModel.nextPage()

@@ -77,7 +77,12 @@ final class LoadingView: UIView {
     func showLoadingViewAndStartAnimation() {
         isHidden = false
         
-        
+        let animation = makeOpacityKeyFrame()
+        oneDotView.layer.add(animation, forKey: "opacity")
+        animation.beginTime = CACurrentMediaTime() + 0.2
+        twoDotView.layer.add(animation, forKey: "opacity")
+        animation.beginTime = CACurrentMediaTime() + 0.4
+        threeDotView.layer.add(animation, forKey: "opacity")
     }
     
     func hideLoadingViewAndStopAnimation() {
