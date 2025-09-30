@@ -13,6 +13,7 @@ protocol PokedexServiceType {
     
     func fetchFirstPokedexResponse() -> AnyPublisher<PokedexResponse, Error>
     func fetchNextPokedexResponse()
+    func preloadNextPageIfNeeded(currentItemCount: Int)
 }
 
 extension PokedexServiceType {

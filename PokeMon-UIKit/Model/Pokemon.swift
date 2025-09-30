@@ -54,11 +54,11 @@ struct Pokemon: Codable, Hashable {
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(identifier)
+        hasher.combine(id)
     }
     
     static func == (lhs: Pokemon, rhs: Pokemon) -> Bool {
-        return lhs.identifier == rhs.identifier
+        return lhs.id == rhs.id
     }
 }
 
