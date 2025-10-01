@@ -48,13 +48,6 @@ class IntroViewController: UIViewController {
     }
     
     private func playAnimation() {
-//        끝나자마자 바로 메인으로 이동
-//        animationView.play { [weak self] finished in
-//            if finished {
-//                self?.moveToMainScreen()
-//            }
-//        }
-        
         animationView.play()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
             self?.fadeOutAndMoveToMainScreen()
