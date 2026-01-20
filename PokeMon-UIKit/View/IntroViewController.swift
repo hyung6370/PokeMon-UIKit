@@ -76,7 +76,7 @@ class IntroViewController: UIViewController {
             
             if let deepLinkURL = sceneDelegate.pendingDeepLinkURL {
                 sceneDelegate.pendingDeepLinkURL = nil
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                     sceneDelegate.handleDeepLink(deepLinkURL)
                 }
             }

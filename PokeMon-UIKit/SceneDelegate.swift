@@ -35,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
            navigationController.topViewController is IntroViewController {
             pendingDeepLinkURL = url
         } else {
-            
+            handleDeepLink(url)
         }
     }
     
@@ -44,32 +44,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
               components.host == "detail",
               let queryItems = components.queryItems,
               let idString = queryItems.first(where: { $0.name == "id" })?.value,
-              let pokemonID = Int(idString) else {
-            print("❌ 딥링크 URL 분석 실패: \(url)")
-            return
-        }
+              let pokemonID = Int(idString) else { return }
         
-        print("🔗 딥링크: 포켓몬 ID = \(pokemonID)")
-        
-        guard let navigationController = window?.rootViewController as? UINavigationController else {
-            print("❌ 네비게이션 컨트롤러가 없음")
-            return
-        }
-        
+        // App Group에서 데이터 가져오기
         let pokemonList = PokeMonWidgetManager.shared.fetchPokemonList()
-        print("📄 불러온 포켓몬 개수: \(pokemonList.count)개")
-        
         guard let selectedPokemon = pokemonList.first(where: { $0.id == pokemonID }) else {
-            print("❌ 해당 ID의 포켓몬 없음: \(pokemonID)")
+            print("❌ 위젯 데이터에서 포켓몬을 찾을 수 없음")
             return
         }
         
-        print("✅ 선택된 포켓몬: \(selectedPokemon.koreanName ?? "알 수 없음")")
+        guard let nav = window?.rootViewController as? UINavigationController else { return }
         
-        let viewModel = DetailViewModel(pokemon: selectedPokemon)
-        let detailVC = DetailViewController(viewModel: viewModel)
+        nav.dismiss(animated: false)
         
-        navigationController.pushViewController(detailVC, animated: true)
+        let detailVM = DetailViewModel(pokemon: selectedPokemon)
+        let detailVC = DetailViewController(viewModel: detailVM)
+        nav.pushViewController(detailVC, animated: true)
     }
 }
 
